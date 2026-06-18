@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
-import { useEffect } from 'react';
 import { personalInfo, githubStats } from '../../data/portfolioData';
 
 /* Inline SVG brand icons */
@@ -17,21 +16,6 @@ const LinkedinIcon = ({ size = 20 }) => (
 );
 
 export default function ProfessionalEcosystem() {
-  useEffect(() => {
-    // Dynamically load the LinkedIn badge script only if it doesn't already exist
-    const scriptUrl = 'https://platform.linkedin.com/badges/js/profile.js';
-    if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
-      const script = document.createElement('script');
-      script.src = scriptUrl;
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
-    } else if (window.IN && window.IN.parse) {
-      // If script is already loaded (e.g. navigation), force LinkedIn to re-parse the DOM
-      window.IN.parse();
-    }
-  }, []);
-
   return (
     <section className="py-12 md:py-16">
       {/* Header */}
@@ -105,16 +89,39 @@ export default function ProfessionalEcosystem() {
           className="w-full"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[330px_1fr] gap-6 items-start">
-            {/* Official LinkedIn Badge */}
-            <div
-              className="badge-base LI-profile-badge w-full"
-              data-locale="en_US"
-              data-size="large"
-              data-theme="light"
-              data-type="VERTICAL"
-              data-vanity="sidd-sharma22"
-              data-version="v1"
-            ></div>
+            {/* Manual LinkedIn Banner */}
+            <div className="glass-card overflow-hidden w-full h-full flex flex-col relative border border-[#0077B5]/20 shadow-sm">
+              {/* Cover Photo */}
+              <div className="h-24 w-full bg-gradient-to-r from-[#0077B5]/80 to-[#00A0DC]/80">
+              </div>
+
+              <div className="px-6 pb-6 flex-1 flex flex-col">
+                {/* Profile Picture */}
+                <div className="w-20 h-20 rounded-full border-4 border-[#FCFAF8] bg-warm-100 flex items-center justify-center -mt-10 mb-3 shadow-sm overflow-hidden z-10 relative">
+                  <span className="text-3xl">👨‍💻</span>
+                </div>
+
+                <h3 className="font-bold text-xl text-warm-900 leading-tight">Siddharth</h3>
+                <p className="text-xs text-warm-800/80 mt-1.5 leading-relaxed">
+                  B.Tech CSE Student | Specialized in AI and Full-Stack Engineering | Open for 2026 Internships
+                </p>
+                <p className="text-[10px] text-warm-800/50 mt-1.5 mb-5 font-medium">
+                  Bengaluru, India
+                </p>
+
+                <div className="mt-auto">
+                  <a
+                    href={personalInfo.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2 rounded-full bg-[#0077B5] text-white text-sm font-semibold hover:bg-[#005582] transition-colors shadow-sm"
+                  >
+                    <LinkedinIcon size={16} />
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Professional Snapshot */}
             <div className="flex flex-col gap-4 h-full justify-center">
