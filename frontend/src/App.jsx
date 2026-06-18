@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import About from './pages/About';
+import Resume from './pages/Resume';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
               <Route path="/about" element={<About />} />
-              <Route path="/resume" element={<div className="glass-card p-8 min-h-[400px]">Resume Content</div>} />
+              <Route path="/resume" element={<Resume />} />
               <Route path="/contact" element={<div className="glass-card p-8 min-h-[400px]">Contact Content</div>} />
             </Routes>
           </AnimatePresence>
