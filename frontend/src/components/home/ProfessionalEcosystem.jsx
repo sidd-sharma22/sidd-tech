@@ -18,17 +18,18 @@ const LinkedinIcon = ({ size = 20 }) => (
 
 export default function ProfessionalEcosystem() {
   useEffect(() => {
-    // Dynamically load the LinkedIn badge script when component mounts
-    const script = document.createElement('script');
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Clean up script when component unmounts
-      document.body.removeChild(script);
-    };
+    // Dynamically load the LinkedIn badge script only if it doesn't already exist
+    const scriptUrl = 'https://platform.linkedin.com/badges/js/profile.js';
+    if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
+      const script = document.createElement('script');
+      script.src = scriptUrl;
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    } else if (window.IN && window.IN.parse) {
+      // If script is already loaded (e.g. navigation), force LinkedIn to re-parse the DOM
+      window.IN.parse();
+    }
   }, []);
 
   return (
@@ -76,44 +77,22 @@ export default function ProfessionalEcosystem() {
             </a>
           </div>
 
-          {/* Stats */}
-          <p className="text-xs font-semibold text-warm-800 uppercase tracking-wide">
-            {githubStats.commitsLastYear} contributions in the last year
-          </p>
-
-          {/* Placeholder Contribution Graph */}
-          <div className="w-full h-24 bg-warm-100 rounded-2xl flex items-center justify-center overflow-hidden">
-            <div className="flex gap-[2px] flex-wrap p-3">
-              {Array.from({ length: 52 * 5 }, (_, i) => {
-                const intensity = Math.random();
-                let bg = 'bg-warm-200/60';
-                if (intensity > 0.75) bg = 'bg-green-500';
-                else if (intensity > 0.5) bg = 'bg-green-400';
-                else if (intensity > 0.3) bg = 'bg-green-300/70';
-                return <div key={i} className={`w-[6px] h-[6px] rounded-[1px] ${bg}`} />;
-              })}
+          {/* GitHub Contribution Graph */}
+          <div className="flex flex-col gap-4 mt-2">
+            <div className="w-full flex justify-center">
+              <img
+                className="w-full rounded-2xl shadow-sm border border-warm-200/50"
+                src="https://streak-stats.demolab.com/?user=sidd-sharma22&hide_border=true&background=FCFAF800&stroke=E58D57&ring=EBE5D9&fire=E58D57&currStreakNum=4A3E30&sideNums=4A3E30&currStreakLabel=4A3E30&sideLabels=4A3E30&dates=4A3E30"
+                alt="GitHub Streak"
+              />
             </div>
-          </div>
-
-          {/* Recent Repos */}
-          <div className="flex flex-col gap-2 pt-1">
-            {githubStats.recentRepos.map((repo, idx) => (
-              <a
-                key={idx}
-                href={repo.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between text-sm text-warm-800 hover:text-accent transition-colors"
-              >
-                <span className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accent inline-block" />
-                  {repo.name}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-warm-800/60">
-                  <Star size={12} /> {repo.stars}
-                </span>
-              </a>
-            ))}
+            <div className="w-full flex justify-center">
+              <img
+                className="w-full rounded-2xl shadow-sm border border-warm-200/50"
+                src="https://github-readme-activity-graph.vercel.app/graph?username=sidd-sharma22&bg_color=ffffff00&color=4A3E30&line=E58D57&point=4A3E30&area=true&area_color=E58D57&hide_border=true&custom_title=Siddharth's%20Contribution%20Graph"
+                alt="GitHub Activity Graph"
+              />
+            </div>
           </div>
         </motion.div>
 
