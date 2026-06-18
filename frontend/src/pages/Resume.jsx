@@ -77,7 +77,7 @@ export default function Resume() {
         
         {/* 1. Top Action Header */}
         <FadeIn>
-          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-warm-200/60 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div className="glass-card p-4 md:p-6 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-md shadow-accent/20 shrink-0">
                 <FileText size={24} />
@@ -94,14 +94,14 @@ export default function Resume() {
               <a 
                 href={personalInfo.resumeFile} 
                 download
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-accent text-white px-5 py-2.5 rounded-lg font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover transition-colors text-sm"
+                className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover transition-colors text-sm"
               >
                 <Download size={16} />
                 Download PDF
               </a>
               <button 
                 onClick={handlePrint}
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-white text-warm-800 border border-warm-200 px-5 py-2.5 rounded-lg font-semibold hover:bg-warm-50 transition-colors text-sm"
+                className="flex-1 sm:flex-none flex items-center justify-center gap-2 glass-card text-warm-800 border border-warm-200 px-5 py-2.5 rounded-full font-semibold hover:bg-warm-50 transition-colors text-sm"
               >
                 <Printer size={16} />
                 Print
@@ -112,7 +112,7 @@ export default function Resume() {
 
         {/* 2. Resume Preview Container (The PDF Embed) */}
         <FadeIn delay={0.1}>
-          <div className="bg-white rounded-2xl shadow-lg border border-warm-200/60 overflow-hidden relative">
+          <div className="glass-card shadow-lg overflow-hidden relative">
             {/* Top accent bar to mimic paper styling */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-accent z-10" />
             
@@ -132,7 +132,7 @@ export default function Resume() {
                   <a 
                     href={personalInfo.resumeFile} 
                     download
-                    className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-accent-hover transition-colors"
+                    className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-accent-hover transition-colors"
                   >
                     <Download size={18} />
                     Download PDF instead
@@ -145,7 +145,7 @@ export default function Resume() {
 
         {/* 3. Bottom Call-to-Action (CTA) */}
         <FadeIn delay={0.2}>
-          <div className="bg-white rounded-3xl p-8 md:p-12 text-center border-2 border-dashed border-warm-200/80">
+          <div className="glass-card rounded-3xl p-8 md:p-12 text-center border-2 border-dashed border-warm-200/80">
             <h2 className="text-2xl md:text-3xl font-extrabold text-warm-900 mb-3">
               Like what you see?
             </h2>
@@ -156,7 +156,7 @@ export default function Resume() {
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               <a 
                 href="/contact" 
-                className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover hover:-translate-y-0.5 transition-all text-sm md:text-base"
+                className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover hover:-translate-y-0.5 transition-all text-sm md:text-base"
               >
                 Get In Touch
               </a>
@@ -164,14 +164,14 @@ export default function Resume() {
                 href={personalInfo.linkedin} 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-2 bg-white text-warm-800 border border-warm-200 px-6 py-3 rounded-xl font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all text-sm md:text-base"
+                className="flex items-center gap-2 glass-card text-warm-800 border border-warm-200 px-6 py-3 rounded-full font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all text-sm md:text-base"
               >
                 <LinkedinIcon size={18} className="text-[#0077B5]" />
                 LinkedIn Profile
               </a>
               <a 
                 href="/projects" 
-                className="flex items-center gap-2 bg-white text-warm-800 border border-warm-200 px-6 py-3 rounded-xl font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all text-sm md:text-base"
+                className="flex items-center gap-2 glass-card text-warm-800 border border-warm-200 px-6 py-3 rounded-full font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all text-sm md:text-base"
               >
                 Explore Projects
                 <ArrowRight size={16} />

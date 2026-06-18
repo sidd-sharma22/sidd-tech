@@ -56,7 +56,7 @@ export default function About() {
 
         {/* Right Column: Quick Stats */}
         <FadeIn delay={0.2} className="lg:col-span-5 w-full">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-warm-200/60">
+          <div className="glass-card rounded-2xl p-6 shadow-sm border border-warm-200/60">
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-warm-100">
               <CheckCircle2 size={20} className="text-accent" />
               <h3 className="font-bold text-warm-900">Quick Stats</h3>
@@ -87,7 +87,7 @@ export default function About() {
       <section>
         <FadeIn>
           <div className="flex items-center gap-3 mb-8">
-            <div className="p-2.5 bg-accent/10 rounded-xl text-accent">
+            <div className="p-2.5 bg-accent/10 rounded-full text-accent">
               <GraduationCap size={24} />
             </div>
             <h2 className="text-2xl font-bold">Education</h2>
@@ -97,7 +97,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {education.map((edu, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-warm-200/60 h-full flex flex-col hover:border-warm-300 transition-colors">
+              <div className="glass-card rounded-2xl p-6 shadow-sm border border-warm-200/60 h-full flex flex-col hover:border-warm-300 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-2">
                   <h3 className="text-lg font-bold">{edu.institution}</h3>
                   <div className="text-xs font-semibold bg-warm-100 text-warm-800 px-3 py-1 rounded-full whitespace-nowrap">
@@ -132,7 +132,7 @@ export default function About() {
       <section>
         <FadeIn>
           <div className="flex items-center gap-3 mb-8">
-            <div className="p-2.5 bg-accent/10 rounded-xl text-accent">
+            <div className="p-2.5 bg-accent/10 rounded-full text-accent">
               <Code2 size={24} />
             </div>
             <h2 className="text-2xl font-bold">Technical Skills Matrix</h2>
@@ -141,7 +141,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, idx) => (
-            <FadeIn key={idx} delay={idx * 0.1} className="bg-white rounded-2xl p-6 shadow-sm border border-warm-200/60 hover:border-warm-300 transition-colors">
+            <FadeIn key={idx} delay={idx * 0.1} className="glass-card rounded-2xl p-6 shadow-sm border border-warm-200/60 hover:border-warm-300 transition-colors">
               <div className="flex items-center gap-2 pb-4 mb-4 border-b border-warm-100">
                 <span className="text-xl">{category.icon}</span>
                 <h3 className="font-bold text-warm-900">{category.title}</h3>
@@ -176,7 +176,7 @@ export default function About() {
       <section>
         <FadeIn>
           <div className="flex items-center gap-3 mb-10">
-            <div className="p-2.5 bg-accent/10 rounded-xl text-accent">
+            <div className="p-2.5 bg-accent/10 rounded-full text-accent">
               <Briefcase size={24} />
             </div>
             <h2 className="text-2xl font-bold">Professional Experience</h2>
@@ -223,7 +223,7 @@ export default function About() {
       <section>
         <FadeIn>
           <div className="flex items-center gap-3 mb-8">
-            <div className="p-2.5 bg-accent/10 rounded-xl text-accent">
+            <div className="p-2.5 bg-accent/10 rounded-full text-accent">
               <Award size={24} />
             </div>
             <h2 className="text-2xl font-bold">Certificates & Recognition</h2>
@@ -233,7 +233,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {memberships.map((membership, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-warm-200/60 hover:border-warm-300 transition-colors h-full flex gap-4">
+              <div className="glass-card rounded-2xl p-6 shadow-sm border border-warm-200/60 hover:border-warm-300 transition-colors h-full flex gap-4">
                 <div className="mt-1 text-warm-400">
                   <Award size={24} />
                 </div>
@@ -257,7 +257,7 @@ export default function About() {
             {/* Background decorative blob */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
             
-            <div className="mx-auto bg-accent text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent/30 relative z-10">
+            <div className="mx-auto bg-accent text-white w-14 h-14 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-accent/30 relative z-10">
               <Download size={24} />
             </div>
             
@@ -273,14 +273,14 @@ export default function About() {
               <a 
                 href={personalInfo.resumeFile} 
                 download
-                className="flex items-center justify-center gap-2 bg-accent text-white px-8 py-3.5 rounded-xl font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-accent text-white px-8 py-3.5 rounded-full font-semibold shadow-md shadow-accent/20 hover:bg-accent-hover hover:-translate-y-0.5 transition-all w-full sm:w-auto"
               >
                 <Download size={18} />
                 Download Full CV
               </a>
               <a 
                 href="/contact" 
-                className="flex items-center justify-center gap-2 bg-white text-warm-900 border border-warm-200 px-8 py-3.5 rounded-xl font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 glass-card text-warm-900 border border-warm-200 px-8 py-3.5 rounded-full font-semibold hover:bg-warm-50 hover:-translate-y-0.5 transition-all w-full sm:w-auto"
               >
                 Let's Talk
                 <span className="text-lg">→</span>

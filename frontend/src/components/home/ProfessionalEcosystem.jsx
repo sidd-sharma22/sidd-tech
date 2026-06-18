@@ -82,7 +82,7 @@ export default function ProfessionalEcosystem() {
           </p>
 
           {/* Placeholder Contribution Graph */}
-          <div className="w-full h-24 bg-warm-100 rounded-lg flex items-center justify-center overflow-hidden">
+          <div className="w-full h-24 bg-warm-100 rounded-2xl flex items-center justify-center overflow-hidden">
             <div className="flex gap-[2px] flex-wrap p-3">
               {Array.from({ length: 52 * 5 }, (_, i) => {
                 const intensity = Math.random();
