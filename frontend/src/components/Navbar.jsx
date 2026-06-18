@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
 
 /* Inline SVG brand icons — lucide-react doesn't include brand logos */
 const GithubIcon = ({ size = 20 }) => (
@@ -31,8 +31,11 @@ export default function Navbar() {
     <header className="glass-nav sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
         {/* Logo */}
-        <NavLink to="/" className="text-xl font-bold tracking-tight text-warm-900">
-          Siddharth
+        <NavLink to="/" className="flex items-center gap-2 group">
+          <Code2 size={24} className="text-accent group-hover:-rotate-12 transition-transform duration-300" />
+          <span className="text-xl font-bold tracking-tight text-warm-900">
+            Siddharth
+          </span>
         </NavLink>
 
         {/* Desktop Nav */}
