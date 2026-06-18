@@ -1,0 +1,180 @@
+## Overview
+
+- A multi-page portfolio website for a B.Tech Computer Science & Engineering student whose primary goal is job/internship applications. The Home page behaves like a one-page portfolio (sections stacked top-to-bottom) with clear "View More" buttons that lead to dedicated pages for Projects, About, Resume and Contact.
+- The design emphasizes concise messaging, three featured project case studies, visible GitHub statistics and a LinkedIn profile badge to increase recruiter confidence and drive applications.
+
+## Plan Details
+
+### App information
+
+- **App type:** Website (desktop width default 1440px; provide mobile layout at 390px).
+- **Site name:** Siddharth — B.Tech CSE Portfolio
+- **Primary goal:** Convert visitors (recruiters/technical hiring managers/internship coordinators) into applicants (resume download, GitHub review, contact).
+
+### Global UI / Navigation
+
+1. **Top navigation (sticky on scroll)**
+
+- Left: Site logo / name.
+- Center: Links: Home, Projects, About, Resume, Contact.
+- Right-most: Icons for GitHub and LinkedIn (small).
+- Mobile: hamburger menu that expands to full-screen nav with same items.
+
+2. **Global footer (site-wide)**
+
+- Short copyright and name, small social icons (GitHub, LinkedIn, Email), minimal site links.
+
+### Screen: Home (behaves as a one-page portfolio)
+
+Top-to-bottom sections (each section includes a visible "View More" CTA that links to the dedicated page):
+
+1. **Hero / Header**
+
+- Left column: Student full name (H1), degree & graduation year (2028), one-line role target (e.g., "Aspiring Software Engineer | Full‑stack Developer"), 1–2 sentence elevator pitch (what you build + what you want).
+- Right column: Professional headshot (circular) or stylized illustration.
+- Primary CTA: "Download Resume" (links to Resume page / PDF). Secondary CTA: "Contact" (scrolls to contact section / Contact page).
+
+2. **Key Achievements ribbon (compact)**
+
+- 3–4 small stat chips (e.g., "3 Featured Projects", "Top 10% hackathon finalist", "GPA: 7.69/10" — use available facts).
+
+3. **Technical Skills (summary)**
+
+- Horizontal skill chips grouped by category: Languages, Frameworks, Tools, Cloud/Infra.
+- Small proficiency indicator (3-level dots or subtle bar) per skill.
+- "View More" → About/Skills section on About page.
+
+4. **Featured Projects (3 cards)**
+
+- Each card: project title, 1-line tagline, 3 small tech tags, thumbnail image, small metric (e.g., "10k+ requests/day"), and a prominent "View More" button to its Project Detail page.
+- Above cards: section title and 1-line intro.
+- Also small link: "See all projects" → Projects listing page.
+
+5. **GitHub Stats & Quick Links**
+
+- Visual block with **four numeric tiles**: Total repos, Total stars, Commits last 12 months, Top language.
+- Small row of latest 3 public repo names (with repo-star icons) linking to their GitHub pages.
+- "View on GitHub" button.
+
+6. **LinkedIn Badge / Professional Snapshot**
+
+- Compact profile card: photo, name, headline, location, number of connections (if desired), and a "View LinkedIn" button that opens LinkedIn profile.
+
+7. **Education & Summary**
+
+- Short education card: degree, college name, graduation year, relevant coursework bullets.
+- Quick line for honors/achievements.
+- "View More" → About page (Education & Resume).
+
+8. **Internship / Work Experience Preview**
+
+- 1–2 highlighted experiences with role, company, short bullet achievements.
+- "View More" → About / Resume.
+
+9. **Contact / Call to Action**
+
+- Short recruiter-facing line (e.g., "Open for internships & SDE roles — available from July 2026").
+- Email CTA button and small inline contact form link to Contact page.
+
+10. **Footer**
+
+- Repeat small social links, resume download, and copyright.
+
+### Screen: Projects (Listing) — /projects
+
+Top-to-bottom:
+
+1. **Page header**: title "Projects" and short intro about selection criteria.
+2. **Filters & sort bar**: filter by tech tag, sort by recency or relevance.
+3. **Featured projects grid**: prominent display of the same 3 featured projects (larger cards with 1–2 sentence blurb, main screenshot, tech stack, 2 action buttons: "View Details" and "View Repo").
+4. **Other projects (optional)**: collapsed list or card grid for additional smaller projects or class assignments.
+5. **GitHub activity sidebar** (desktop only): recent contribution heatmap snapshot (image placeholder) and quick link to GitHub.
+6. **Pagination / load more** if many projects.
+
+### Screen: Project Detail (Template) — /projects/[slug]
+
+Top-to-bottom (use this for each of the 3 featured projects):
+
+1. **Project header**: Title, 1-line tagline, hero image or animated GIF placeholder, primary links (Live demo if available, GitHub repo).
+2. **Quick facts bar**: Role (e.g., solo/team lead), Duration, Tech stack tags, Key metrics (e.g., uptime, users, speedup% — if available).
+3. **Problem statement**: 2–3 sentences describing the need.
+4. **Solution summary**: short architecture diagram image placeholder and 3–5 bullet points about the approach.
+5. **Technical details**: subheadings for Frontend, Backend, Data, DevOps (each 1–3 lines) and code snippet block placeholder (visual only).
+6. **Screenshots / Walkthrough**: 2–4 annotated images with captions.
+7. **Outcome / Metrics**: numerical results, what was learned, future work.
+8. **Call-to-action**: "View repo on GitHub" and "Back to projects".
+
+### Screen: About — /about
+
+Top-to-bottom:
+
+1. **Page header**: "About" with short mission statement.
+2. **Extended bio**: 3–4 paragraphs describing background, interests, and career goals.
+3. **Education**: detailed cards (college, degree, GPA, relevant coursework, notable projects/awards).
+4. **Skills matrix**: organized visual list (Languages, Frameworks, Tools, Cloud) with proficiency tags.
+5. **Experience timeline**: vertical timeline of internships, significant roles, and responsibilities (each entry: role, employer, date range, 2–3 bullets).
+6. **Certificates & Awards**: small card grid.
+7. **Download resume CTA**.
+
+### Screen: Resume — /resume
+
+Top-to-bottom:
+
+1. **Download area**: prominent "Download PDF resume" button with file size and last-updated date (content needed from student).
+2. **HTML resume preview**: condensed, readable resume layout (Name, contact, education, experience, projects, skills) suitable for quick recruiter scan.
+3. **LinkedIn & GitHub quick links**.
+
+### Screen: Contact — /contact
+
+Top-to-bottom:
+
+1. **Header**: short prompt inviting recruiters to reach out.
+2. **Contact form**: fields: Name, Email, Subject, Message, attach resume (optional). Submit button.
+3. **Alternative contact methods**: direct email link, LinkedIn button, GitHub link, and availability note.
+4. **Small privacy note**: brief one-liner about not sharing info.
+
+### Global Component: Project Card (reusable)
+
+- Thumbnail image, title, 1-line summary, 3 tech tags, small metric, primary button "View Details", secondary icon button linking to repo.
+
+### Content & Assets Checklist (required from student)
+
+- Full name and preferred site handle.
+- Professional headshot (square, high-res) and optional illustration.
+- Elevator pitch (1–2 sentences).
+- Short bio (3–4 paragraphs) and education details (college, branch, graduation year, GPA, notable coursework).
+- 3 featured project case studies: for each provide: title, 1-line tagline, 200–400 word case study (problem, approach, technical stack, role, outcome/metrics), 3–6 screenshots (size: 1200×700 or similar), live demo link (if any), GitHub repo link.
+- Resume PDF (for Download) and optional plain-text resume for HTML preview.
+- GitHub profile URL (so stats/links are accurate) and LinkedIn profile URL.
+
+### Content length guidance
+
+- Hero pitch: 1–2 sentences (20–40 words).
+- Project card summary: 1 sentence (10–20 words).
+- Project case study: 200–400 words.
+- About biography: 3 paragraphs, 40–80 words each.
+
+### SEO, Metadata & Accessibility hints (for content planning)
+
+- Page titles: [Name] — [Page] (e.g., "Asha Rao — Projects").
+- Meta descriptions: 120–160 char recruiter-focused summary.
+- Image alt text: brief descriptive text for key visuals (headshot, project screenshots).
+- Add OG Meta Titles
+
+### Responsive notes
+
+- Desktop (1440): multi-column layouts (hero split, two-column project details with sidebar).
+- Mobile (390): stacked single-column, hamburger nav, prominent CTA buttons full-width, compressed skill chips.
+
+### Example content placeholders to include in designs
+
+- Placeholder resume filename and last updated date.
+- Placeholder GitHub tiles with numeric placeholders and repo names.
+- Three project slugs: project-alpha, project-beta, project-gamma (design should include generic content slots for these).
+
+## Final checklist before design
+
+- Provide the three completed project case studies and screenshots.
+- Supply headshot and resume PDF.
+- Confirm exact name, contact email, GitHub & LinkedIn profile URLs, and availability date for internships.
+- Optional: list of preferred companies / role titles for tailoring hero pitch and keywords.

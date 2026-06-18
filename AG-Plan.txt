@@ -1,0 +1,64 @@
+# Siddharth's MERN Portfolio Website Implementation Plan
+
+## Goal Description
+Build a premium, multi-page full-stack portfolio website for Siddharth, a B.Tech CSE student. The application will use the MERN (MongoDB, Express, React, Node.js) stack and feature a light-warm, glassmorphism-inspired UI with rounded buttons and smooth animations using Framer Motion. The site will include a contact form integrated with Nodemailer for email notifications. The design will draw inspiration from Visily-multiscreens, prioritizing high recruiter conversion through concise messaging and clear case studies.
+
+## User Review Required
+> [!IMPORTANT]
+> **CSS Framework:** The guidelines suggest using Vanilla CSS by default. Are you comfortable with us using Vanilla CSS (along with Framer Motion), or would you explicitly prefer a framework like TailwindCSS or SCSS for styling the glassmorphism UI?
+
+> [!CAUTION]
+> **Database Usage:** Since we are using the MERN stack, we typically use MongoDB. For the contact form, do you want to **both** send an email via Nodemailer AND store the message in a MongoDB database, or just send the email?
+
+## Open Questions
+> [!NOTE]
+> 1. **Resume PDF:** You mentioned "Use the 'Sidd-Resume.pdf'". I currently do not have access to this file. Could you please upload it, or paste its contents into the chat so I can extract your personalized details?
+> 2. **Nodemailer Setup:** Which email service (e.g., Gmail, SendGrid, Outlook) do you plan to use for sending the Nodemailer emails?
+> 3. **Assets:** Do you have your professional headshot, project screenshots, and Visily reference images ready to upload to the workspace?
+
+## Proposed Architecture & Stack
+
+### Frontend (Client)
+- **Framework:** React (initialized via Vite for speed).
+- **Routing:** React Router DOM (Home, Projects, About, Resume, Contact).
+- **Animations:** Framer Motion (for page transitions, scroll-reveals, and micro-interactions).
+- **Styling:** Vanilla CSS (or Tailwind if requested) focusing on light-warm palettes and transparent glassmorphism effects (e.g., `backdrop-filter: blur()`).
+- **Deployment Build:** Static output optimized for Vercel or Netlify.
+
+### Backend (Server)
+- **Framework:** Node.js with Express.js.
+- **Email Service:** Nodemailer to handle POST requests from the Contact page and dispatch emails.
+- **Database:** MongoDB (using Mongoose) to optionally log contact requests and potentially store project data (if a CMS approach is desired over hardcoded data).
+
+## Proposed UI/UX Implementation Details
+
+1. **Theme & Aesthetics:**
+   - Backgrounds: Soft, warm gradients (e.g., soft peach, light beige, warm white).
+   - Components: Glassmorphism panels with semi-transparent white backgrounds, rounded corners (e.g., `border-radius: 16px` to `24px`), and soft drop shadows.
+   - Typography: Clean, modern sans-serif fonts (e.g., Inter, Outfit).
+2. **Key Pages:**
+   - **Home:** One-page scrolling feel with Hero, Skills, 3 Featured Projects, GitHub stats, and Contact CTA.
+   - **Projects:** Grid layout with filtering and detailed case-study slugs (`/projects/:slug`).
+   - **About:** Bio, Education, Timeline, and Skills Matrix.
+   - **Resume:** HTML preview of the resume and a PDF download link.
+   - **Contact:** Glassmorphic form connected to the Express backend.
+
+## Next Steps for Execution
+1. Initialize the Vite + React frontend project.
+2. Initialize the Node + Express backend project.
+3. Set up the global CSS variables for the light-warm glassmorphism theme.
+4. Build the core layout components (Sticky Nav, Footer).
+5. Implement the pages using Framer Motion for transitions.
+6. Create the Express API endpoint for Nodemailer.
+7. Connect the frontend contact form to the backend.
+
+## Verification Plan
+
+### Automated/Local Tests
+- Run `npm run dev` for both client and server.
+- Verify routing transitions and Framer Motion animations trigger correctly.
+- Test the contact form submission by sending a test email to a local SMTP catcher (like Ethereal Email) or the provided real credentials.
+
+### Manual Verification
+- Review the UI aesthetics against the "light-warm" and "glassmorphism" requirements.
+- Ensure all mobile responsive breakpoints (390px) display correctly.
