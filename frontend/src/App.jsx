@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
+import About from './pages/About';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
-              <Route path="/about" element={<div className="glass-card p-8 min-h-[400px]">About Content</div>} />
+              <Route path="/about" element={<About />} />
               <Route path="/resume" element={<div className="glass-card p-8 min-h-[400px]">Resume Content</div>} />
               <Route path="/contact" element={<div className="glass-card p-8 min-h-[400px]">Contact Content</div>} />
             </Routes>

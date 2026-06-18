@@ -123,34 +123,58 @@ export default function ProfessionalEcosystem() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
-          className="glass-card p-6 flex flex-col items-center text-center gap-6 justify-center overflow-hidden"
+          className="w-full"
         >
-          {/* Official LinkedIn Badge Container */}
-          <div className="w-full flex justify-center mt-2">
-            <div className="badge-base LI-profile-badge w-full"
+          <div className="grid grid-cols-1 lg:grid-cols-[330px_1fr] gap-6 items-start">
+            {/* Official LinkedIn Badge */}
+            <div
+              className="badge-base LI-profile-badge w-full"
               data-locale="en_US"
               data-size="large"
               data-theme="light"
               data-type="VERTICAL"
               data-vanity="sidd-sharma22"
               data-version="v1"
-            >
-              <a className="badge-base__link LI-simple-link"
-                href="https://in.linkedin.com/in/sidd-sharma22?trk=profile-badge">
-                  Siddharth Sharma
-              </a>
-            </div>
-          </div>
+            ></div>
 
-          {/* Quick Stats Restored */}
-          <div className="flex gap-8 w-full justify-center pt-2">
-            <div className="text-center">
-              <p className="text-2xl font-bold text-accent">500+</p>
-              <p className="text-[10px] uppercase tracking-wide text-warm-800/60 font-medium">Connections</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-accent">20k+</p>
-              <p className="text-[10px] uppercase tracking-wide text-warm-800/60 font-medium">Impressions</p>
+            {/* Professional Snapshot */}
+            <div className="flex flex-col gap-4 h-full justify-center">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="glass-card p-4 text-center">
+                  <p className="text-2xl font-bold text-accent">500+</p>
+                  <p className="text-xs uppercase tracking-wide text-warm-800/60">
+                    Connections
+                  </p>
+                </div>
+
+                <div className="glass-card p-4 text-center">
+                  <p className="text-2xl font-bold text-accent">20k+</p>
+                  <p className="text-xs uppercase tracking-wide text-warm-800/60">
+                    Impressions
+                  </p>
+                </div>
+
+                <div className="glass-card p-4 text-center">
+                  <p className="text-xl font-bold text-accent">6+</p>
+                  <p className="text-xs uppercase tracking-wide text-warm-800/60">
+                    Projects
+                  </p>
+                </div>
+
+                <div className="glass-card p-4 text-center">
+                  <p className="text-xl font-bold text-accent">2</p>
+                  <p className="text-xs uppercase tracking-wide text-warm-800/60">
+                    Internship
+                  </p>
+                </div>
+
+                <div className="glass-card p-4 text-center col-span-2">
+                  <p className="font-semibold text-warm-900">IAENG Member</p>
+                  <p className="text-xs text-warm-800/60 mt-1">
+                    Open to Work • B.Tech CSE @ IIIT Kottayam
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

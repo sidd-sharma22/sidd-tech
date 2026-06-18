@@ -138,3 +138,16 @@ export const githubStats = {
     { name: 'studyhub', stars: 5, url: 'https://github.com/sidd-sharma22/studyhub' },
   ],
 };
+
+export const memberships = [
+  {
+    organization: 'Chitrachaya (Photography & Videography Club)',
+    role: 'Sublead',
+    description: 'Leading creative initiatives, organizing workshops, and managing media coverage for college events.',
+  },
+  {
+    organization: 'International Association of Engineers (IAENG)',
+    role: 'Member',
+    description: 'Member ID: 568889. Active participant in global engineering discussions and networking.',
+  }
+];
